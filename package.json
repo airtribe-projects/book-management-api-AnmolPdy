@@ -1,0 +1,28 @@
+{
+  "name": "book_management_api",
+  "version": "1.0.0",
+  "description": "Book Management API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airtribe-projects/book-management-api-AnmolPdy.git"
+  },
+  "author": "Anmol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airtribe-projects/book-management-api-AnmolPdy/issues"
+  },
+  "homepage": "https://github.com/airtribe-projects/book-management-api-AnmolPdy#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.4"
+  }
+}
