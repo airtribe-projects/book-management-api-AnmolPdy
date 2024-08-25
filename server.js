@@ -11,6 +11,8 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("Connected to MongoDB")
 })
 
+const booksRouter=require("./routes/books")
+
 app.use(express.json());
 
 
@@ -24,3 +26,6 @@ app.get('/',(req,res)=>{
     console.log("hello world");
     res.send("Hello world")
 })
+
+
+app.use('/api/books',booksRouter);
