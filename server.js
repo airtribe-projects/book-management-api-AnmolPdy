@@ -12,6 +12,7 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 })
 
 const booksRouter=require("./routes/books")
+const userRouter=require("./routes/users")
 
 app.use(express.json());
 
@@ -29,3 +30,4 @@ app.get('/',(req,res)=>{
 
 
 app.use('/api/books',booksRouter);
+app.use('/api/users',userRouter);

@@ -1,4 +1,5 @@
 const express=require("express");
+const jwt=require("jsonwebtoken");
 const router =express.Router();
 
 books=[
@@ -74,6 +75,21 @@ books=[
     }
 ]
 
+const validateJWT=(req,res,next)=>{
+  const headers=req.headers;
+  const token=headers.authorization
+  const token1 = token.split(' ')[1];
+  const decodedToken=jwt.verify(token1,process.env.JWT_SECRET);
+  console.log({decodedToken});
+  if (decodedToken.username){
+    req.user=decodedToken;
+    next()
+  }else {
+    res.status(401).send("unauthorized");
+  }
+};
+
+router.use(validateJWT)
 
 router.get('/',(req,res)=>{
     res.send(books)
