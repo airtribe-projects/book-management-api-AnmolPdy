@@ -69,6 +69,25 @@ The API will be accessible at http://localhost:3000.
 
 ## API Endpoints
 
+### User Authentication Endpoints
+
+- **POST /api/register**: Register a new user.
+  - **Request Body**:
+    - `username`: The user's username.
+    - `email`: The user's email address.
+    - `password`: The user's password.
+
+- **POST /api/login**: Login an existing user and obtain a JWT token.
+  - **Request Body**:
+    - `username`: The user's username.
+    - `password`: The user's password.
+  - **Response**:
+    - `200 OK`: Returns a JWT token if login is successful.
+    - `401 Unauthorized`: Invalid password.
+    - `400 Bad Request`: Incorrect login details.
+
+### Books Endpoints
+
 - **GET /api/books**: Retrieve a paginated list of books. Supports filtering by genre.
   - Example: `/api/books?page=2` (Go to the next page)
   - Example: `/api/books?genre=Novel` (Filter books by the genre "Novel")
